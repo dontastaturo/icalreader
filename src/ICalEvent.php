@@ -13,6 +13,8 @@ class ICalEvent
 
     private $busy = true;
 
+    private $summary = '';
+
     public function __construct($data, $timezone)
     {
         $this->init($data, $timezone);
@@ -31,6 +33,10 @@ class ICalEvent
         );
 
         $this->setBusy(
+            Arr::get($data, 'SUMMARY')
+        );
+
+        $this->setSummary(
             Arr::get($data, 'SUMMARY')
         );
     }
@@ -73,5 +79,12 @@ class ICalEvent
     public function holds(Carbon $atDatetime)
     {
         return $this->start->lt($atDatetime) && $this->end->gt($atDatetime);
+    }
+
+    protected function setSummary(string $summary = null)
+    {
+        if (!\is_null($summary)) {
+            $this->summary = trim($summary);
+        }
     }
 }
