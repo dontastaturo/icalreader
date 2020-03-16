@@ -3,15 +3,16 @@
 use Timegridio\ICalReader\ICalEvents;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
+use Orchestra\Testbench\TestCase;
 
-class ICalEventsUnitTest extends PackageTestCase
+class ICalEventsUnitTest extends TestCase
 {
     /**
      * @var ICalEvents
      */
     protected $icalevents;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -50,7 +51,7 @@ class ICalEventsUnitTest extends PackageTestCase
 
     protected function getStub()
     {
-        $contents = file_get_contents(__DIR__.'/stubs/ical-stub.ics');
+        $contents = file_get_contents(__DIR__ . '/stubs/ical-stub.ics');
 
         return $contents;
     }

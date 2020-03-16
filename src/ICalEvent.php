@@ -3,6 +3,7 @@
 namespace Timegridio\ICalReader;
 
 use Carbon\Carbon;
+use Illuminate\Support\Arr;
 
 class ICalEvent
 {
@@ -20,18 +21,18 @@ class ICalEvent
     protected function init($data, $timezone)
     {
         $this->setStart(
-            array_get($data, 'DTSTART'),
+            Arr::get($data, 'DTSTART'),
             $timezone
-            );
+        );
 
         $this->setEnd(
-            array_get($data, 'DTEND'),
+            Arr::get($data, 'DTEND'),
             $timezone
-            );
+        );
 
         $this->setBusy(
-            array_get($data, 'SUMMARY')
-            );
+            Arr::get($data, 'SUMMARY')
+        );
     }
 
     public function getStart()

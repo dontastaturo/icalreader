@@ -13,18 +13,18 @@ abstract class PackageTestCase extends TestCase
      *
      * @return array
      */
-#    protected function getPackageProviders($app)
-#    {
-#        return [Timegridio\ICalReader\ICalReaderServiceProvider::class];
-#    }
+    #    protected function getPackageProviders($app)
+    #    {
+    #        return [Timegridio\ICalReader\ICalReaderServiceProvider::class];
+    #    }
 
     /**
      * Setup the DB before each test.
      */
-#    public function setUp()
-#    {
-#        parent::setUp();
-#    }
+    #    public function setUp()
+    #    {
+    #        parent::setUp();
+    #    }
 
     /**
      * Define environment setup.
@@ -36,17 +36,17 @@ abstract class PackageTestCase extends TestCase
     protected function getEnvironmentSetUp($app)
     {
         #       $app['config']->set('database.default', 'testbench');
- #       $app['config']->set('database.connections.testbench', [
- #           'driver'   => 'sqlite',
- #           'database' => ':memory:',
- #           'prefix'   => '',
- #       ]);
+        #       $app['config']->set('database.connections.testbench', [
+        #           'driver'   => 'sqlite',
+        #           'database' => ':memory:',
+        #           'prefix'   => '',
+        #       ]);
     }
 
     /**
      * Rollback transactions after each test.
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         #        app('db')->rollback();
     }

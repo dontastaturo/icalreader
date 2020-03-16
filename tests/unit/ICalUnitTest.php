@@ -6,7 +6,7 @@ class ICalUnitTest extends PackageTestCase
 {
     protected $parser;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -24,7 +24,7 @@ class ICalUnitTest extends PackageTestCase
     {
         $name = $this->parser->calendarName();
 
-        $this->assertInternalType('string', $name);
+        $this->assertIsString($name);
         $this->assertEquals('Personal', $name);
     }
 
@@ -35,7 +35,7 @@ class ICalUnitTest extends PackageTestCase
     {
         $description = $this->parser->calendarDescription();
 
-        $this->assertInternalType('string', $description);
+        $this->assertIsString($description);
         $this->assertEquals('Test Stub Calendar', $description);
     }
 
@@ -46,7 +46,7 @@ class ICalUnitTest extends PackageTestCase
     {
         $timezone = $this->parser->calendarTimezone();
 
-        $this->assertInternalType('string', $timezone);
+        $this->assertIsString($timezone);
         $this->assertEquals('America/Argentina/Buenos_Aires', $timezone);
     }
 
@@ -57,7 +57,7 @@ class ICalUnitTest extends PackageTestCase
     {
         $events = $this->parser->events();
 
-        $this->assertInternalType('array', $events);
+        $this->assertIsArray($events);
         $this->assertCount(1576, $events);
         $this->assertTrue($this->parser->hasEvents());
     }
@@ -90,7 +90,7 @@ class ICalUnitTest extends PackageTestCase
 
     protected function getStub()
     {
-        return file_get_contents(__DIR__.'/stubs/ical-stub.ics');
+        return file_get_contents(__DIR__ . '/stubs/ical-stub.ics');
     }
 
     protected function getProcessedStub($id)
