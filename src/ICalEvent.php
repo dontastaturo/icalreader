@@ -87,4 +87,9 @@ class ICalEvent
             $this->summary = trim($summary);
         }
     }
+
+    public function getSummary(): string
+    {
+        return $this->summary;
+    }
 }
