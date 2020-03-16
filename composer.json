@@ -1,7 +1,7 @@
 {
-    "name": "timegridio/icalreader",
+    "name": "dontastaturo/icalreader",
     "type": "library",
-    "description": "iCal reader wrapper for Laravel 5",
+    "description": "iCal reader wrapper for Laravel 5+",
     "keywords": [
         "timegridio",
         "icalreader",
@@ -14,21 +14,19 @@
         "time",
         "date"
     ],
-    "homepage": "https://github.com/timegridio/icalreader",
+    "homepage": "https://github.com/dontastaturo/icalreader",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Ariel Vallese",
-            "email": "alariva@timegrid.io",
-            "homepage": "http://alariva.com",
-            "role": "Developer"
-        }
-    ],
+    "authors": [{
+        "name": "Ariel Vallese",
+        "email": "alariva@timegrid.io",
+        "homepage": "http://alariva.com",
+        "role": "Developer"
+    }],
     "require": {
-        "php" : "~5.6|~7.0"
+        "php": "~5.6|~7.0"
     },
     "require-dev": {
-        "phpunit/phpunit" : "~4.0||~5.0",
+        "phpunit/phpunit": "~4.0||~5.0",
         "scrutinizer/ocular": "~1.1",
         "squizlabs/php_codesniffer": "~2.3",
         "codeclimate/php-test-reporter": "dev-master",
@@ -38,7 +36,7 @@
     },
     "autoload": {
         "classmap": [
-          "tests/PackageTestCase.php"
+            "tests/PackageTestCase.php"
         ],
         "psr-4": {
             "Timegridio\\ICalReader\\": "src"
